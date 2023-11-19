@@ -13,6 +13,7 @@ public class centroDeportivo {
     private int calificacion;
 
 
+
     public centroDeportivo() {
     }
 
