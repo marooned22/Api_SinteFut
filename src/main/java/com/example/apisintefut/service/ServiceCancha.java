@@ -17,6 +17,7 @@ public class ServiceCancha implements ICanchaService {
 
     @Override
     public List<Canchas> listar(){
+
         return (List<Canchas>) repositoryCanchas.findAll();
     }
 
