@@ -13,17 +13,19 @@ public class Canchas {
     private int numeroCancha;
     private boolean estadoCancha;
     private int costos;
+    private String tipoCancha;
 
     public Canchas() {
     }
 
-    public Canchas(int id, String descripcionCanchas, int calificacion, int numeroCancha, boolean estadoCancha, int costos) {
+    public Canchas(int id, String descripcionCanchas, int calificacion, int numeroCancha, boolean estadoCancha, int costos, String tipoCancha) {
         this.id = id;
         DescripcionCanchas = descripcionCanchas;
         this.calificacion = calificacion;
         this.numeroCancha = numeroCancha;
         this.estadoCancha = estadoCancha;
         this.costos = costos;
+        this.tipoCancha = tipoCancha;
     }
 
     public int getId() {
@@ -72,5 +74,13 @@ public class Canchas {
 
     public void setCostos(int costos) {
         this.costos = costos;
+    }
+
+    public String getTipoCancha() {
+        return tipoCancha;
+    }
+
+    public void setTipoCancha(String tipoCancha) {
+        this.tipoCancha = tipoCancha;
     }
 }

@@ -11,15 +11,18 @@ public class centroDeportivo {
     private int id;
     private String descripcionCentro;
     private int calificacion;
+    private String direccion;
+
 
 
     public centroDeportivo() {
     }
 
-    public centroDeportivo(int id, String descripcionCentro, int calificacion) {
+    public centroDeportivo(int id, String descripcionCentro, int calificacion, String direccion) {
         this.id = id;
         this.descripcionCentro = descripcionCentro;
         this.calificacion = calificacion;
+        this.direccion = direccion;
     }
 
     public int getId() {
@@ -44,5 +47,13 @@ public class centroDeportivo {
 
     public void setCalificacion(int calificacion) {
         this.calificacion = calificacion;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 }
