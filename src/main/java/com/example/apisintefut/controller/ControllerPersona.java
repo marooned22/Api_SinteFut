@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("views/personas")
+@RequestMapping("/views/persona")
 public class ControllerPersona {
 
     @Autowired

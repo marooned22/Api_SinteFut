@@ -5,7 +5,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import java.sql.Time;
 import java.util.Date;
 
 @Entity
@@ -25,8 +24,6 @@ public class Personas {
     private Date fechaNacimiento;
     private  String servicioSalud;
 
-
-
     public Personas() {
     }
     public Personas(int id, int identificacion, String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String email, Date fechaNacimiento, String servicioSalud){
@@ -40,7 +37,6 @@ public class Personas {
         this.fechaNacimiento = fechaNacimiento;
         this.servicioSalud = servicioSalud;
     }
-
 
     public int getId() {
         return id;
