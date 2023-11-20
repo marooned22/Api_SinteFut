@@ -7,31 +7,37 @@
 </head>
 <body>
 <div class="container mt-4">
-    <a th:href="@{/index.html}" class="btn btn-primary">Nuevo</a>
+    <a th:href="@{/nuevo}" class="btn btn-primary">Nuevo</a>
     <table class="table" border="3">
         <thead>
         <tr>
             <th>ID</th>
-            <th>NOMBRE</th>
-            <th>APELLIDO</th>
+            <th>IDENTIFICACION</th>
+            <th>PRIMRE NOMBRE</th>
+            <th>SEGUNDO NOMBRE</th>
+            <th>PRIMER APELLIDO</th>
+            <th>SEGUNDO APELLIDO</th>
             <th>EMAIL</th>
-            <th>DIRECCION</th>
-            <th>ESTADO CIVIL</th>
-            <th>EDAD</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>SERVICIO DE SALUD</th>
             <th>ACCIONES</th>
+
         </tr>
         </thead>
         <tbody>
         <tr th:each="persona:${personas}">
-            <td th:text="${personas.id}"></td>
-            <td th:text="${personas.primerNombre}"></td>
-            <td th:text="${persona.apellido}"></td>
+            <td th:text="${persona.id}"></td>
+            <td th:text="${persona.identificacion}"></td>
+            <td th:text="${persona.primerNombre}"></td>
+            <td th:text="${persona.segundoNombre}"></td>
+            <td th:text="${persona.primerApellido}"></td>
+            <td th:text="${persona.segundoApellido}"></td>
             <td th:text="${persona.email}"></td>
-            <td th:text="${persona.direccion}"></td>
-            <td th:text="${persona.estadoCivil}"></td>
-            <td th:text="${persona.edad}"></td>
+            <td th:text="${persona.fechaNacimiento}"></td>
+            <td th:text="${persona.servicioSalud}"></td>
+
             <td>
-                <a th:href="@{/eliminar/}+${persona.id}"  class="btn btn-danger">Eliminar</a>
+                <a th:href="@{/eliminar}+${persona.id}"  class="btn btn-danger">Eliminar</a>
             </td>
 
         </tr>
