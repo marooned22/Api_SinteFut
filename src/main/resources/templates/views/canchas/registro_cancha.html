@@ -20,7 +20,7 @@
         <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
         
         <!-- Link hacia el archivo de estilos css -->
-        <link rel="stylesheet" href="../css/login.css">
+        <link rel="stylesheet" href="../canchas/registro_cancha.css">
         
         <style type="text/css">
             
@@ -38,19 +38,21 @@
             <div id="central">
                 <div id="login">
                     <div class="titulo">
-                        Bienvenido
+                        Registrar sitio
                     </div>
                     <form id="loginform">
-                        <input type="text" name="usuario" placeholder="Usuario" required>
+                        <input type="text" name="nombre-sitio" placeholder="Nombre sitio" required>
+
+                        <input type="text" name="descripcion"  minlength="10" maxlength="80" size="90" placeholder="Descpricion" required/>
                         
-                        <input type="password" placeholder="Contraseña" name="password" required>
-                        
-                        <button type="submit" title="Ingresar" name="Ingresar"><a href="../index.html">Iniciar sesion</a></button>
+                        <span>Imagenes del sitio</span>
+                        <input type="file">
+
+                        <input type="text" name="direccion" placeholder="Direccion" required>
+
+                        <button type="submit" title="Ingresar" name="Ingresar"><a href="../../index.html">Registrar</a></button>
                     </form>
-                    <div class="pie-form">
-                        <a href="#">¿Perdiste tu contraseña?</a>
-                        <a href="./registro.html">¿No tienes Cuenta? Registrate</a>
-                    </div>
+
                 </div>
             </div>
         </div>
