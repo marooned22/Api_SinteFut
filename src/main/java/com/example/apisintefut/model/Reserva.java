@@ -1,10 +1,16 @@
 package com.example.apisintefut.model;
 
-import java.sql.Time;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.time.LocalTime;
 import java.util.Date;
 
+@Entity
+@Table(name = "reserva")
 public class Reserva {
+    @Id
     private int id;
 
     private Date fecha;
