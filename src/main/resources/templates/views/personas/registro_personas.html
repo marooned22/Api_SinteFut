@@ -41,23 +41,29 @@
                     <div class="titulo">
                         Registrate
                     </div>
-                    <form id="loginform" th:action="@{/save}" th:object="${persona}" method="post">
-                        <input type="text" name="first-name" placeholder="Primer nombre" required>
+                    <form th:action="@{/save}" th:object="${persona}" method="POST">
 
-                        <input type="text" name="second-name" placeholder="Segundo nombre" required>
+                        <input  th:field="*{identificacion}" type="text"  placeholder="Identificacion" required>
+                        <input th:field="*{primerNombre}" type="text"  placeholder="Primer nombre" required>
 
-                        <input type="text" name="first-last-name" placeholder="Primer apellido" required>
+                        <input th:field="*{segundoNombre}" type="text"  placeholder="Segundo nombre" required>
 
-                        <input type="text" name="second-last-name" placeholder="Segundo apellido" required>
+                        <input th:field="*{primerApellido}" type="text" placeholder="Primer apellido" required>
 
-                        <input type="email" name="correo" placeholder="Correo" required>
+                        <input th:field="*{segundoApellido}" type="text"  placeholder="Segundo apellido" required>
+
+                        <input th:field="*{email}" type="email" name="correo" placeholder="Correo" required>
                         
                         <span>Fecha de nacimiento</span>
-                        <input type="date" name="date" required>
-
+                        <input th:field="*{fechaNacimiento}" type="date" name="date" required>
+                        <input th:field="*{servicioSalud}" type="text"  placeholder="Servicio de Salud" required>
                         <input type="password" placeholder="Contraseña" name="password" required>
                         
-                        <button type="submit" title="Ingresar" name="Ingresar"><a href="../index.html">Registrarse</a></button>
+                        <button type="submit" value="Guardar"><a href="listar.html">Registrarse</a></button>
+
+                        <a th:href="@{/listar}" class="btn btn-warning"><button  title="Atras" >Atras</button>
+
+                        </a>
                     </form>
 
                 </div>

@@ -42,7 +42,7 @@ public class ControllerPersona {
     @GetMapping("/nuevo")
     public String agregar(Model model){
         model.addAttribute("persona", new Personas());
-        return "views/personas/listar";
+        return "views/personas/registro_personas";
     }
 
 
