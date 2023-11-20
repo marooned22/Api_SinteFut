@@ -24,7 +24,7 @@ public class ControllerPersona {
     public String listar(Model model){
         List<Personas> personas = personaService.listar();
         model.addAttribute("personas", personas);
-        return "index";
+        return "views/personas/listar";
     }
 
     @GetMapping("eliminar/{id}")
@@ -36,13 +36,13 @@ public class ControllerPersona {
     @PostMapping("/save")
     public String save(@Validated Personas p){
         personaService.save(p);
-        return "redirect:/listar";
+        return "redirect:/views/personas/listar";
     }
 
     @GetMapping("/nuevo")
     public String agregar(Model model){
         model.addAttribute("persona", new Personas());
-        return "form";
+        return "views/personas/listar";
     }
 
 

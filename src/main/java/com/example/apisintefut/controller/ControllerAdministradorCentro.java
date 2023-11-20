@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/views/administradorCentro")
+@RequestMapping("/views/nuevo")
 public class ControllerAdministradorCentro {
 
 
