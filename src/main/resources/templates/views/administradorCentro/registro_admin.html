@@ -2,7 +2,7 @@
 <!doctype html>
 
 <!-- Representa la raíz de un documento HTML o XHTML. Todos los demás elementos deben ser descendientes de este elemento. -->
-<html lang="es">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
     
     <head>
         
@@ -40,7 +40,7 @@
                     <div class="titulo">
                         Registrate
                     </div>
-                    <form id="loginform">
+                    <form th:action="@{/save}" th:object="${administradorCentro}" method="post" >
                         <input type="text" name="first-name" placeholder="Primer nombre" required>
 
                         <input type="text" name="second-name" placeholder="Segundo nombre" required>
