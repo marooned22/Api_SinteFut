@@ -1,7 +1,8 @@
 package com.example.apisintefut.interfaceService;
 
-import com.example.apisintefut.model.Personas;
+
 import com.example.apisintefut.model.Reserva;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;

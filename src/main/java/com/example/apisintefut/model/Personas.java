@@ -110,7 +110,7 @@ public class Personas {
         return servicioSalud;
     }
 
-    public void setServicioSalud(String servicioSalud) {
+    public void setServicioSalud (String servicioSalud) {
         this.servicioSalud = servicioSalud;
     }
 }

@@ -39,7 +39,7 @@ public class ControllerPersona {
         return "redirect:/views/personas/listar";
     }
 
-    @GetMapping("/nuevo")
+    @GetMapping("/guardarP")
     public String agregar(Model model){
         model.addAttribute("persona", new Personas());
         return "views/personas/registro_personas";
