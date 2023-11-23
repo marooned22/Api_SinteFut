@@ -2,10 +2,59 @@
 <html lang="es" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Lista Personas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./estilos.css">
 </head>
 <body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #1690a0;">
+        <div class="container-fluid">
+            <a class="navbar-brand"  th:href="@{login.html}">
+                <img class="logoMenu" src="../../../static/img/logo central.jpg" alt=""  width="40">
+                Sintefut
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="main.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="canchas.html">Canchas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Registro</a>
+                    </li>
+
+                    <div class="barra"></div>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>-->
+                </ul>
+            </div>
+
+
+            <form class="d-flex">
+                <input class="form-control me-2" id="elementoClicable" type="search" placeholder="¿Que deseas buscar hoy? " aria-label="Search">
+                <button class="btn btn-dark" type="submit">Buscar</button>
+            </form>
+
+
+
+        </div>
+    </nav>
+</header>
 <div class="container mt-4">
     <a th:href="@{/views/personas/guardarP}" class="btn btn-primary">Nuevo</a>
     <table class="table" border="3">

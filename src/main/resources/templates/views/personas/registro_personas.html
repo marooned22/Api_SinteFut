@@ -41,30 +41,61 @@
                     <div class="titulo">
                         Registrate
                     </div>
+
+
+
                     <form class="table" th:action="@{/views/personas/save}" th:object="${persona}" method="POST">
+                        <div class="form-floating mb-3">
+                            <input th:field="*{primerNombre}" type="text" class="form-control"  placeholder="Primer Nombre" >
+                            <label for="floatingInput">Primer Nombre</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input  th:field="*{segundoNombre}" type="text" class="form-control"  placeholder="Segundo Nombre">
+                            <label for="floatingInput">Segundo Nombre</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input th:field="*{primerApellido}" type="text" class="form-control" id="floatingInput" placeholder="Primer Apellido" >
+                            <label for="floatingInput">Primer Apellido</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input th:field="*{segundoApellido}" type="text" class="form-control"  placeholder="Segundo Apellido">
+                            <label for="floatingInput">Segundo Apellido</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input th:field="*{email}" type="email" class="form-control"  placeholder="name@example.com" >
+                            <label for="floatingInput">Correo</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Contraseña</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input  th:field="*{fechaNacimiento}" type="date" class="form-control" name="date" >
+                            <label for="floatingPassword">Fecha de Nacimiento</label>
+                        </div>
 
-                        <input  th:field="*{identificacion}" type="text"  placeholder="Identificacion" required>
-                        <input th:field="*{primerNombre}" type="text"  placeholder="Primer nombre" required>
+                        <div class="form-floating mb-3">
+                            <input th:field="*{servicioSalud}" type="text" class="form-control"  placeholder="Servicio Salud">
+                            <label  for="floatingInput">Servicio de Salud</label>
+                        </div>
 
-                        <input th:field="*{segundoNombre}" type="text"  placeholder="Segundo nombre" >
+                        <div class="form-floating mb-3">
 
-                        <input th:field="*{primerApellido}" type="text" placeholder="Primer apellido" required>
+                            <button class="btn btn-success" type="submit" value="Guardar">Guardar</button>
 
-                        <input th:field="*{segundoApellido}" type="text"  placeholder="Segundo apellido" required>
 
-                        <input th:field="*{email}" type="email" name="correo" placeholder="Correo" required>
-                        
-                        <span>Fecha de nacimiento</span>
-                        <input th:field="*{fechaNacimiento}" type="date" name="date" required>
-                        <input th:field="*{servicioSalud}" type="text"  placeholder="Servicio de Salud" required>
-                        <input type="password" placeholder="Contraseña" name="password" required>
-                        
-                        <button type="submit" value="Guardar">Guardar</button>
+                        </div>
 
-                        <a th:href="@{/listar}" class="btn btn-warning"><button  title="Atras" >Atras</button>
-
-                        </a>
                     </form>
+
+                    <a th:href="@{/views/personas/login}" ><button class="btn btn-warning">login</button>
+
+                    </a>
+
+
+
+
+
 
                 </div>
             </div>

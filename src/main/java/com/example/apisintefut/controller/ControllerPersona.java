@@ -45,5 +45,11 @@ public class ControllerPersona {
         return "views/personas/registro_personas";
     }
 
+    @GetMapping("/login")
+    public String login(){
+        return  "views/personas/login";
+    }
+
+
 
 }
