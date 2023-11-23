@@ -41,12 +41,12 @@
                     <div class="titulo">
                         Registrate
                     </div>
-                    <form class="table" th:action="@{/save}" th:object="${persona}" method="POST">
+                    <form class="table" th:action="@{/views/personas/save}" th:object="${persona}" method="POST">
 
                         <input  th:field="*{identificacion}" type="text"  placeholder="Identificacion" required>
                         <input th:field="*{primerNombre}" type="text"  placeholder="Primer nombre" required>
 
-                        <input th:field="*{segundoNombre}" type="text"  placeholder="Segundo nombre" required>
+                        <input th:field="*{segundoNombre}" type="text"  placeholder="Segundo nombre" >
 
                         <input th:field="*{primerApellido}" type="text" placeholder="Primer apellido" required>
 
