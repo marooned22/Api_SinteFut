@@ -2,8 +2,7 @@
 <!doctype html>
 
 <!-- Representa la raíz de un documento HTML o XHTML. Todos los demás elementos deben ser descendientes de este elemento. -->
-
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="es">
     
     <head>
         
@@ -21,7 +20,7 @@
         <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
         
         <!-- Link hacia el archivo de estilos css -->
-        <link rel="stylesheet" href="../personas/registro_personas.css">
+        <link rel="stylesheet" href="../personas/login.css">
         
         <style type="text/css">
             
@@ -39,33 +38,19 @@
             <div id="central">
                 <div id="login">
                     <div class="titulo">
-                        Registrate
+                        Bienvenido
                     </div>
-                    <form th:action="@{/save}" th:object="${persona}" method="POST">
-
-                        <input  th:field="*{identificacion}" type="text"  placeholder="Identificacion" required>
-                        <input th:field="*{primerNombre}" type="text"  placeholder="Primer nombre" required>
-
-                        <input th:field="*{segundoNombre}" type="text"  placeholder="Segundo nombre" required>
-
-                        <input th:field="*{primerApellido}" type="text" placeholder="Primer apellido" required>
-
-                        <input th:field="*{segundoApellido}" type="text"  placeholder="Segundo apellido" required>
-
-                        <input th:field="*{email}" type="email" name="correo" placeholder="Correo" required>
+                    <form id="loginform">
+                        <input type="text" name="usuario" placeholder="Usuario" required>
                         
-                        <span>Fecha de nacimiento</span>
-                        <input th:field="*{fechaNacimiento}" type="date" name="date" required>
-                        <input th:field="*{servicioSalud}" type="text"  placeholder="Servicio de Salud" required>
                         <input type="password" placeholder="Contraseña" name="password" required>
                         
-                        <button type="submit" value="Guardar"><a href="listar.html">Registrarse</a></button>
-
-                        <a th:href="@{/listar}" class="btn btn-warning"><button  title="Atras" >Atras</button>
-
-                        </a>
+                        <button type="submit" title="Ingresar" name="Ingresar"><a href="../../index.html">Iniciar sesion</a></button>
                     </form>
-
+                    <div class="pie-form">
+                        <a href="#">¿Perdiste tu contraseña?</a>
+                        <a href="./registro.html">¿No tienes Cuenta? Registrate</a>
+                    </div>
                 </div>
             </div>
         </div>
