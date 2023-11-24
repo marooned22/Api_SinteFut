@@ -12,7 +12,7 @@
     <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #1690a0;">
         <div class="container-fluid">
             <a class="navbar-brand"  th:href="@{login.html}">
-                <img class="logoMenu" src="../../../static/img/logo central.jpg" alt=""  width="40">
+                <img th:src="@{/img/logo central.jpg}" style= "height: 40px; border-radius: 100%"  id="imagen"/>
                 Sintefut
             </a>
 
@@ -92,7 +92,40 @@
         </tr>
         </tbody>
     </table>
+
+
 </div>
+
+<div class="container mt-4">
+    <div th:each="persona:${personas}" class="card" style="width: 18rem; ">
+        <img th:src="@{/img/persona.png}" style= "height: 150px; margin: 5px"  id="imagen"/>
+        <div style="display: flex; justify-content: center; margin-left: 5px ">
+            <div  class="card-body"  >
+
+                <div>
+                    <h5 th:text="${persona.primerNombre}" class="card-title"></h5>
+                </div>
+                <div>
+                    <h5 th:text="${persona.primerApellido}" class="card-title"></h5>
+                </div>
+
+                <p th:text="${persona.identificacion}"  class="card-text"></p>
+            </div>
+
+
+        </div>
+
+        <ul class="list-group list-group-flush">
+            <li  class="list-group-item">Correo</li>
+            <li th:text="${persona.email}" class="list-group-item"></li>
+            <li class="list-group-item">Servicio de Salud</li>
+            <li th:text="${persona.servicioSalud}" class="list-group-item"></li>
+        </ul>
+
+    </div>
+</div>
+
+
 
 
 </body>
