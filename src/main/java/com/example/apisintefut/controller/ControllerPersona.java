@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("views/personas")
+@RequestMapping("/views/personas/")
 public class ControllerPersona {
 
     @Autowired
@@ -27,10 +27,10 @@ public class ControllerPersona {
         return "views/personas/listar";
     }
 
-    @GetMapping("eliminar/{id}")
+    @GetMapping("eliminar{id}")
     public String delete(@PathVariable int id){
         personaService.delete(id);
-        return "redirect:/listar";
+        return "redirect:/views/personas/listar";
     }
 
     @PostMapping("/save")
@@ -44,6 +44,12 @@ public class ControllerPersona {
         model.addAttribute("persona", new Personas());
         return "views/personas/registro_personas";
     }
+
+    @GetMapping("/login")
+    public String login(){
+        return  "views/personas/login";
+    }
+
 
 
 }
