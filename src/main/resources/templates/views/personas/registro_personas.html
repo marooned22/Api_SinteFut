@@ -36,7 +36,7 @@
     <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #1690a0;">
         <div class="container-fluid">
             <a class="navbar-brand"  th:href="@{login.html}">
-                <img class="logoMenu" th:src="@{estilos.css}" alt=""  width="40">
+                <img class="logoMenu" th:src="*{../../static/img/logo central.jpg}" alt=""  width="40">
                 Sintefut
             </a>
 
@@ -55,10 +55,10 @@
                         <a class="nav-link" href="#">Reservas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="canchas.html">Canchas</a>
+                        <a class="nav-link" th:href="@{/views/canchas/listar}">Canchas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.html">Registro</a>
+                        <a class="nav-link" th:href="@{/views/personas/listar}">Personas</a>
                     </li>
 
                     <div class="barra"></div>
