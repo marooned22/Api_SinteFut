@@ -22,7 +22,7 @@ public class ControllerReserva {
         return "index"; // Reemplaza "index" por el nombre correcto de tu página de listado de reservas
     }
 
-    @GetMapping("/eliminar/{id}")
+    @GetMapping("/eliminar{id}")
     public String delete(@PathVariable int id) {
         reservaService.delete(id);
         return "redirect:/views/reserva/listar";
