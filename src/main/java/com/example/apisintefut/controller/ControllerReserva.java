@@ -1,18 +1,15 @@
 package com.example.apisintefut.controller;
-import com.example.apisintefut.interfaceService.IPersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.example.apisintefut.interfaceService.IReservaService;
 import com.example.apisintefut.model.Reserva;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @Controller
-@RequestMapping("/views/reserva")
+@RequestMapping("/views/reservas")
 public class ControllerReserva {
 
     @Autowired
@@ -26,13 +23,13 @@ public class ControllerReserva {
     }
 
     @GetMapping("/eliminar/{id}")
-    public String eliminar(@PathVariable int id) {
+    public String delete(@PathVariable int id) {
         reservaService.delete(id);
         return "redirect:/views/reserva/listar";
     }
 
     @PostMapping("/guardar")
-    public String guardar(@Validated @ModelAttribute("reserva") Reserva reserva) {
+    public String save(@Validated @ModelAttribute("reserva") Reserva reserva) {
         reservaService.save(reserva);
         return "redirect:/views/reserva/listar";
     }

@@ -1,7 +1,6 @@
 package com.example.apisintefut.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.sql.Time;
 import java.time.LocalTime;
@@ -9,6 +8,8 @@ import java.util.Date;
 @Entity
 @Table(name = "reservas")
 public class Reserva {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private Date fecha;

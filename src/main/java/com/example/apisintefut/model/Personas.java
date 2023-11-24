@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Time;
 import java.util.Date;
@@ -22,6 +23,8 @@ public class Personas {
     private String primerApellido;
     private String segundoApellido;
     private String email;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaNacimiento;
     private  String servicioSalud;
 
@@ -110,7 +113,7 @@ public class Personas {
         return servicioSalud;
     }
 
-    public void setServicioSalud(String servicioSalud) {
+    public void setServicioSalud (String servicioSalud) {
         this.servicioSalud = servicioSalud;
     }
 }
