@@ -28,10 +28,10 @@
                         <a class="nav-link" href="#">Servicios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/views/administradorCentro/listar}">Administradores</a>
+                        <a class="nav-link" th:href="@{/views/administradorCentro/guardarA}">Registrar Administradores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/views/canchas/guardarC}">Registrar Cancha</a>
+                        <a class="nav-link" th:href="@{/views/canchas/listar}">Cancha</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" th:href="@{/views/personas/listar}">Personas</a>
@@ -56,35 +56,40 @@
     </nav>
 </header>
 <div class="container mt-4">
-    <a th:href="@{/views/canchas/guardarC}" class="btn btn-primary">Nuevo</a>
+    <a th:href="@{/views/administradorCentro/guardarA}" class="btn btn-primary">Nuevo</a>
     <table class="table" border="3">
         <thead>
         <tr>
             <th>ID</th>
-            <th>TIPO</th>
-            <th>DESCRIPCION</th>
-            <th>CALIFICACION</th>
-            <th># DE CANCHA</th>
-            <th>ESTADO CANCHA</th>
-            <th>COSTO</th>
+            <th>IDENTIFICACION</th>
+            <th>PRIMRE NOMBRE</th>
+            <th>SEGUNDO NOMBRE</th>
+            <th>PRIMER APELLIDO</th>
+            <th>SEGUNDO APELLIDO</th>
+            <th>EMAIL</th>
+            <th>FECHA DE NACIMIENTO</th>
+
             <th>ACCIONES</th>
 
         </tr>
         </thead>
         <tbody>
-        <tr th:each="cancha:${canchas}">
-            <td th:text="${cancha.id}"></td>
-            <td th:text="${cancha.tipoCancha}"></td>
-            <td th:text="${cancha.descripcionCanchas}"></td>
-            <td th:text="${cancha.calificacion}"></td>
-            <td th:text="${cancha.numeroCancha}"></td>
-            <td th:text="${cancha.estadoCancha}"></td>
-            <td th:text="${cancha.costos}"></td>
+        <tr th:each="administradorCentros:${administradorCentro}">
+            <td th:text="${administradorCentros.id}"></td>
+            <td th:text="${administradorCentros.identificacion}"></td>
+            <td th:text="${administradorCentros.primerNombre}"></td>
+            <td th:text="${administradorCentros.segundoNombre}"></td>
+            <td th:text="${administradorCentros.primerApellido}"></td>
+            <td th:text="${administradorCentros.segundoApellido}"></td>
+            <td th:text="${administradorCentros.email}"></td>
+            <td th:text="${administradorCentros.fechaNacimiento}"></td>
+
 
 
             <td>
-                <a th:href="@{/views/canchas/eliminar}+${cancha.id}"  class="btn btn-danger">Eliminar</a>
+                <a th:href="@{/views/administradorCentro/eliminar}+${administradorCentros.id}"  class="btn btn-danger">Eliminar</a>
             </td>
+
 
         </tr>
         </tbody>
@@ -92,37 +97,7 @@
 </div>
 
 
-<div class="container mt-4">
-    <div th:each="cancha:${canchas}" class="card" style="width: 18rem; ">
-        <img th:src="@{/img/canchas/bombonera.jpg}" style= "height: 200px; margin: 5px"  id="imagen"/>
-        <div style="display: flex; justify-content: center; margin-left: 5px ">
-            <div  class="card-body"  >
 
-                <div>
-                    <h5 th:text="${cancha.tipoCancha}" class="card-title"></h5>
-                </div>
-                <div>
-                    <h5  class="card-title">Descripcion</h5>
-                </div>
-
-                <td th:text="${cancha.costos}">Costo</td>
-                <p th:text="${cancha.descripcionCanchas}" class="card-text"></p>
-
-
-            </div>
-
-
-        </div>
-
-        <ul class="list-group list-group-flush">
-
-
-            <li class="list-group-item">Numero de cancha</li>
-            <li th:text="${cancha.numeroCancha}" class="list-group-item">a</li>
-        </ul>
-
-    </div>
-</div>
 
 
 </body>
