@@ -50,6 +50,11 @@ public class ControllerPersona {
         return  "views/personas/login";
     }
 
+    @GetMapping("/registroP")
+    public String registro( Model model){
+        model.addAttribute("persona", new Personas());
+        return  "views/personas/registro_personas";
+    }
 
 
 }

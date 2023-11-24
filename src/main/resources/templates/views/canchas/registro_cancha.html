@@ -2,60 +2,141 @@
 <!doctype html>
 
 <!-- Representa la raíz de un documento HTML o XHTML. Todos los demás elementos deben ser descendientes de este elemento. -->
-<html lang="es">
-    
-    <head>
-        
-        <meta charset="utf-8">
-        
-        <title> Formulario de Acceso </title>    
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <meta name="author" content="Videojuegos & Desarrollo">
-        <meta name="description" content="Muestra de un formulario de acceso en HTML y CSS">
-        <meta name="keywords" content="Formulario Acceso, Formulario de LogIn">
-        
-        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
-        <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
-        
-        <!-- Link hacia el archivo de estilos css -->
-        <link rel="stylesheet" href="../canchas/registro_cancha.css">
-        
-        <style type="text/css">
-            
-        </style>
-        
-        <script type="text/javascript">
-        
-        </script>
-        
-    </head>
-    
-    <body>
-        
-        <div id="contenedor">
-            <div id="central">
-                <div id="login">
-                    <div class="titulo">
-                        Registrar sitio
-                    </div>
-                    <form id="loginform">
-                        <input type="text" name="nombre-sitio" placeholder="Nombre sitio" required>
 
-                        <input type="text" name="descripcion"  minlength="10" maxlength="80" size="90" placeholder="Descpricion" required/>
-                        
-                        <span>Imagenes del sitio</span>
-                        <input type="file">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
-                        <input type="text" name="direccion" placeholder="Direccion" required>
+<head>
 
-                        <button type="submit" title="Ingresar" name="Ingresar"><a href="../../index.html">Registrar</a></button>
-                    </form>
+    <meta charset="utf-8">
+
+    <title> Formulario de Acceso </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Videojuegos & Desarrollo">
+    <meta name="description" content="Muestra de un formulario de acceso en HTML y CSS">
+    <meta name="keywords" content="Formulario Acceso, Formulario de LogIn">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
+
+    <!-- Link hacia el archivo de estilos css -->
+
+    <link rel="stylesheet" th:href="@{views/canchas/registro_cancha.css}">
+
+
+
+    <script type="text/javascript">
+
+    </script>
+
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #1690a0;">
+        <div class="container-fluid">
+            <a class="navbar-brand"  th:href="@{login.html}">
+                <img class="logoMenu" src="../../../static/img/logo central.jpg" alt=""  width="40">
+                Sintefut
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="main.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/views/canchas/listar}">Canchas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/views/personas/listar}">Personas</a>
+                    </li>
+
+                    <div class="barra"></div>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>-->
+                </ul>
+            </div>
+
+
+            <form class="d-flex">
+                <input class="form-control me-2" id="elementoClicable" type="search" placeholder="¿Que deseas buscar hoy? " aria-label="Search">
+                <button class="btn btn-dark" type="submit">Buscar</button>
+            </form>
+
+
+
+        </div>
+    </nav>
+</header>
+<body>
+
+<div id="contenedor" class="container mt-4" style="border: #000000">
+    <div id="central">
+        <div id="login">
+            <div class="titulo">
+                Registrar Cancha
+            </div>
+
+
+
+            <form class="table" th:action="@{/views/canchas/save}" th:object="${cancha}" method="POST">
+                <div class="form-floating mb-3">
+                    <input th:field="*{tipoCancha}" type="text" class="form-control"  placeholder="Tipo Cancha" >
+                    <label for="floatingInput">Tipo</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input  th:field="*{descripcionCanchas}" type="text" class="form-control"  placeholder="Descripcion">
+                    <label for="floatingInput">Descripcion Cancha</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input th:field="*{calificacion}" type="text" class="form-control" id="floatingInput" placeholder="Calificacion" >
+                    <label for="floatingInput">Calificacion</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input th:field="*{numeroCancha}" type="text" class="form-control"  placeholder="Numero Cancha">
+                    <label for="floatingInput"># Cancha</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input th:field="*{estadoCancha}" type="text" class="form-control"  placeholder="Estado Cancha">
+                    <label for="floatingInput">Estado Cancha</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input th:field="*{costos}" type="text" class="form-control"  placeholder="Costo">
+                    <label for="floatingInput">Costo</label>
+                </div>
+
+                <div class="form-floating mb-3">
+
+                    <button class="btn btn-success" type="submit" value="Guardar">Guardar</button>
 
                 </div>
-            </div>
+
+            </form>
+
+
+            <a th:href="@{/views/personas/login}" ><button class="btn btn-warning">login</button>
+
+            </a>
+
+
+
+
+
+
         </div>
-            
-    </body>
+    </div>
+</div>
+
+</body>
 </html>

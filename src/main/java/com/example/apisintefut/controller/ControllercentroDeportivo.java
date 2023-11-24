@@ -26,7 +26,7 @@ public class ControllercentroDeportivo {
         return "index";
     }
 
-    @GetMapping("eliminar/{id}")
+    @GetMapping("eliminar{id}")
     public String delete(@PathVariable int id){
         centroDeportivoService.delete(id);
         return "redirect:/listar";
