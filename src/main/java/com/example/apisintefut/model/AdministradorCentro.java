@@ -1,6 +1,7 @@
 package com.example.apisintefut.model;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -17,6 +18,7 @@ public class AdministradorCentro {
     private String primerApellido;
     private String segundoApellido;
     private String email;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaNacimiento;
 
     public AdministradorCentro() {
